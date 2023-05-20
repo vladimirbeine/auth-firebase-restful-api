@@ -1,0 +1,7 @@
+{
+  "name": "user-auth-firebase-restful",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
