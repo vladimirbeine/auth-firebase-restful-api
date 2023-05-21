@@ -1,0 +1,33 @@
+<ion-content>
+
+  <div>
+  <form class="main-container" (ngSubmit)="onSubmit(credentials)" [formGroup]="credentials">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-list>
+            <ion-item>
+              <ion-input label="Email" labelPlacement="floating" [clearInput]="true" type="email" placeholder="Email" formControlName="email"></ion-input>
+              <ion-note *ngIf="(credentialsCtrl.email.touched || submitted) && credentialsCtrl.email.errors?.['required']">This email is invalid</ion-note>
+            </ion-item>
+            <ion-item>
+              <ion-input label="Password" labelPlacement="floating" [clearInput]="true" type="password" placeholder="Password" formControlName="password"></ion-input>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-button [disabled]="!credentials.valid" type="submit" expand="block" color="primary">
+            {{ isLogin ? 'Login' : 'Signup' }}
+          </ion-button>
+          <ion-button type="button" expand="block" color="primary" fill="clear" (click)="onSwitchAuthMode()">
+            Switch to {{ isLogin ? 'Signup' : 'Login' }}
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+  </div>
+
+</ion-content>
