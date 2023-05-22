@@ -70,7 +70,7 @@ export class AuthPage implements OnInit {
       resData => {
         console.log(resData);
         loading.dismiss();
-        this.router.navigateByUrl('/places/tabs/discover');
+        this.router.navigateByUrl('/home');
       },
       errRes => {
         loading.dismiss();

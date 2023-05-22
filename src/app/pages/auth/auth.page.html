@@ -1,3 +1,12 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Auth Page | {{ isLogin ? 'Login' : 'Signup' }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
 <ion-content>
 
   <div>
@@ -12,6 +21,7 @@
             </ion-item>
             <ion-item>
               <ion-input label="Password" labelPlacement="floating" [clearInput]="true" type="password" placeholder="Password" formControlName="password"></ion-input>
+              <ion-note *ngIf="(credentialsCtrl.password.touched || submitted) && credentialsCtrl.password.errors?.['required']">This password is too short</ion-note>
             </ion-item>
           </ion-list>
         </ion-col>
